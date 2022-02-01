@@ -1,0 +1,18 @@
+type Query {
+    coupon(
+        code: String @doc(description: "email of the customer")
+    ): [Coupon]
+@resolver(class:"Codilar\\Coupon\\Model\\Resolver\\Coupon")
+@doc(description:
+    "The testcustomer query returns information about a customer")
+@cache(cacheable: false)
+}
+type Coupon @doc(description: "Testcustomer defines the customer name and other details") {
+    name: String
+     rule_id:Int
+     code: String
+    uses_per_coupon:Int
+    description: String
+    from_date: String
+    is_active: Int
+}
